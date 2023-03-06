@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <h3>  Onsubmit event in Javascript</h3>
+
+        <script lang="javascript" type="text/javascript">
+            function validate()
+            {
+                if(document.myform.nm.value == "")
+                {
+                    alert("Please Provide Your name")
+                    document.myform.nm.focus();
+                    return false;
+                }
+
+                if(document.myform.mob.value =="" || isNaN(document.myform.mob.value) || document.myform.mob.value.lenght != 10)
+                {
+                    alert("Please enter the mobile numebr in the given format 7057585179.");
+                    document.myform.mob.focus();
+                    return false;
+                }
+            
+            }
+
+        </script>
+    </head>
+
+    <body>
+        <form name="myform" action="signup.php" method="post" onsubmit="return (validate())">
+            <table>
+                <tr>
+                    <th colspan="2" ><h4>Registration Form</h4></th>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td><input type="text" name="nm"></td>
+                </tr>
+
+                <tr>
+                    <td>Mobile</td>
+                    <td><input type="text" name="mob"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <input type="submit" value="Save">
+                    </td>
+                </tr>
+            </table>
+
+        </form>
+    </body>
+    
+</html>
